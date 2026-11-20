@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Acme School - Plataforma de gestión y realización de exámenes">
+
+    <title>Iniciar sesión | Acme School</title>
+
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Estilos del login -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header class="login-header">
+        <a href="index.html" class="brand">
+            <div class="brand-icon">A</div>
+
+            <div class="brand-text">
+                <span class="brand-name">ACME</span>
+                <span class="brand-subtitle">SCHOOL</span>
+            </div>
+        </a>
+
+        <span class="header-label">PLATAFORMA ACADÉMICA</span>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="login-main">
+
+        <section class="login-container">
+
+            <!-- Presentación -->
+            <div class="login-welcome">
+                <span class="welcome-tag">BIENVENIDO</span>
+
+                <h1>Tu conocimiento<br>abre nuevas puertas.</h1>
+
+                <p>
+                    Accede a la plataforma de Acme School
+                    y administra tus actividades académicas.
+                </p>
+            </div>
+
+            <!-- Formulario de acceso -->
+            <div class="login-card">
+
+                <div class="login-card-header">
+                    <h2>Iniciar sesión</h2>
+
+                    <p>
+                        Ingresa tus credenciales para continuar.
+                    </p>
+                </div>
+
+                <form id="login-form">
+
+                    <!-- Correo electrónico -->
+                    <div class="form-group">
+
+                        <label for="email">Correo electrónico</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="nombre@ejemplo.com"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="form-group">
+
+                        <label for="password">Contraseña</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Mensajes de validación -->
+                    <div
+                        id="login-message"
+                        class="login-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+                    <!-- Botón de acceso -->
+                    <button type="submit" class="login-button">
+                        Iniciar sesión
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                </form>
+
+                <div class="login-card-footer">
+                    <span>Acceso exclusivo para personal autorizado</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Acceso público a los exámenes -->
+        <div class="public-access">
+            ¿Eres estudiante y deseas presentar un examen?
+
+            <a href="resolver.html">
+                Consulta los exámenes disponibles →
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="login-footer">
+        <p>© 2026 Acme School. Todos los derechos reservados.</p>
+        <span>Plataforma de evaluación académica</span>
+    </footer>
+
+    <!-- JavaScript principal -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>

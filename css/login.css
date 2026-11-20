@@ -1,0 +1,401 @@
+/* =========================================
+   ACME SCHOOL - LOGIN
+========================================= */
+
+/* ENCABEZADO */
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--primary-dark);
+}
+
+.brand-icon {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(135deg, #2563EB, #60A5FA);
+
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+
+    border-radius: 12px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-name {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand-subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+}
+
+.header-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+}
+
+
+/* CONTENIDO PRINCIPAL */
+
+.login-main {
+    width: min(1120px, calc(100% - 48px));
+
+    margin: auto;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* DISTRIBUCIÓN DEL LOGIN */
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 70px;
+
+    padding: 60px 0 40px;
+}
+
+
+/* PRESENTACIÓN */
+
+.login-welcome {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #172554, #1E40AF);
+
+    padding: 65px 50px;
+
+    border-radius: 24px;
+
+    min-height: 430px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+}
+
+.login-welcome::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -100px;
+    top: -100px;
+
+    background: rgba(96, 165, 250, 0.15);
+
+    border-radius: 50%;
+}
+
+.login-welcome > * {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-tag {
+    display: inline-block;
+
+    color: #93C5FD;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.login-welcome h1 {
+    font-size: clamp(32px, 4vw, 45px);
+    line-height: 1.15;
+
+    margin-bottom: 22px;
+}
+
+.login-welcome p {
+    max-width: 390px;
+
+    font-size: 15px;
+    color: #CBD5E1;
+}
+
+
+/* TARJETA DEL LOGIN */
+
+.login-card {
+    background-color: var(--white-color);
+
+    padding: 42px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+}
+
+.login-card-header {
+    margin-bottom: 32px;
+}
+
+.login-card-header h2 {
+    font-size: 27px;
+    color: var(--primary-dark);
+
+    margin-bottom: 8px;
+}
+
+.login-card-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* FORMULARIO */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    outline: none;
+
+    background-color: #F8FAFC;
+
+    font-size: 14px;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+
+    background-color: white;
+}
+
+.form-group input::placeholder {
+    color: #94A3B8;
+}
+
+
+/* MENSAJES */
+
+.login-message {
+    color: #DC2626;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+
+/* BOTÓN */
+
+.login-button {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--primary-color);
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-2px);
+}
+
+.login-button span {
+    font-size: 20px;
+}
+
+
+/* PIE DE LA TARJETA */
+
+.login-card-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+
+/* ACCESO PÚBLICO */
+
+.public-access {
+    text-align: center;
+
+    padding: 0 0 35px;
+
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.public-access a {
+    color: var(--primary-color);
+    font-weight: bold;
+
+    margin-left: 5px;
+}
+
+.public-access a:hover {
+    text-decoration: underline;
+}
+
+
+/* PIE DE PÁGINA */
+
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 7%;
+
+    background-color: var(--white-color);
+    border-top: 1px solid var(--border-color);
+
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .login-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .login-welcome {
+        min-height: 300px;
+        padding: 45px;
+    }
+
+    .login-welcome h1 {
+        font-size: 35px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .login-header {
+        padding: 18px 22px;
+    }
+
+    .header-label {
+        display: none;
+    }
+
+    .login-main {
+        width: calc(100% - 32px);
+    }
+
+    .login-container {
+        padding-top: 30px;
+    }
+
+    .login-welcome {
+        min-height: 250px;
+        padding: 30px;
+    }
+
+    .login-welcome h1 {
+        font-size: 30px;
+    }
+
+    .login-card {
+        padding: 28px 22px;
+    }
+
+    .public-access {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .login-footer {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+}

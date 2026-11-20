@@ -1,0 +1,54 @@
+/* =========================================
+   ACME SCHOOL - ESTILOS GENERALES
+========================================= */
+
+/* Variables de colores */
+:root {
+    --primary-color: #2563EB;
+    --primary-dark: #172554;
+    --secondary-color: #60A5FA;
+
+    --background-color: #F4F7FC;
+    --white-color: #FFFFFF;
+
+    --text-color: #1E293B;
+    --text-secondary: #64748B;
+
+    --border-color: #E2E8F0;
+}
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Elementos generales */
+button,
+input {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
