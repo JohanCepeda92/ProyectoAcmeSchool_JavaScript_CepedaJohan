@@ -1,7 +1,7 @@
 // Importar Web Components
 import "./components/app-header.js";
 import "./components/app-sidebar.js";
-
+import { initializeUsersModule } from "./modules/users.js";
 // ==========================================
 // ACME SCHOOL - APLICACIÓN PRINCIPAL
 // ==========================================
@@ -31,7 +31,7 @@ function initializeApp() {
 
     // PROTEGER DASHBOARD
 
-    if (currentPage === "dashboard.html") {
+if (["dashboard.html", "users.html"].includes(currentPage)) {
 
         if (!isAuthenticated()) {
 
@@ -60,6 +60,13 @@ const appSidebar = document.querySelector("app-sidebar");
 if (appSidebar) {
 
     appSidebar.addEventListener("logout", handleLogout);
+
+}
+
+// Inicializar gestión de usuarios
+if (currentPage === "users.html") {
+
+    initializeUsersModule();
 
 }
 

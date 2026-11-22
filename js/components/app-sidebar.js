@@ -16,12 +16,12 @@ class AppSidebar extends HTMLElement {
 
                 <nav class="sidebar-nav">
 
-                    <a href="#overview" class="nav-item active">
+                    <a href="dashboard.html" class="nav-item active">
                         <span>▦</span>
                         Resumen
                     </a>
 
-                    <a href="#users" class="nav-item">
+                    <a href="users.html" class="nav-item">
                         <span>♙</span>
                         Gestión de usuarios
                     </a>

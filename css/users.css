@@ -1,0 +1,262 @@
+/* =========================================
+   ACME SCHOOL - GESTIÓN DE USUARIOS
+========================================= */
+
+/* CONTENEDORES */
+
+.users-form-section,
+.users-table-section {
+    background-color: var(--white-color);
+    padding: 30px;
+    margin-bottom: 30px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.03);
+}
+
+
+/* FORMULARIO */
+
+.users-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+.users-form-grid .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.users-form-grid label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: var(--text-color);
+}
+
+.users-form-grid input,
+.users-form-grid select {
+    width: 100%;
+    padding: 13px 14px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+
+    background-color: #F8FAFC;
+    color: var(--text-color);
+
+    font-size: 13px;
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.users-form-grid input:focus,
+.users-form-grid select:focus {
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+
+    background-color: white;
+}
+
+.users-form-grid input::placeholder {
+    color: #94A3B8;
+}
+
+
+/* BOTONES DEL FORMULARIO */
+
+.users-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+#submit-user,
+#cancel-edit {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+#submit-user {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#submit-user:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-2px);
+}
+
+#cancel-edit {
+    background-color: #E2E8F0;
+    color: var(--text-color);
+}
+
+#cancel-edit:hover {
+    background-color: #CBD5E1;
+}
+
+
+/* MENSAJES */
+
+#users-message {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+#users-message.error {
+    color: #DC2626;
+}
+
+#users-message.success {
+    color: #16A34A;
+}
+
+
+/* TABLA */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.table-container thead {
+    background-color: #F8FAFC;
+}
+
+.table-container th {
+    padding: 15px 18px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-container td {
+    padding: 16px 18px;
+
+    font-size: 12px;
+    color: var(--text-color);
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-container tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+.table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ACCIONES DE LA TABLA */
+
+.action-button {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.edit-button {
+    background-color: #DBEAFE;
+    color: #1D4ED8;
+    margin-right: 5px;
+}
+
+.edit-button:hover {
+    background-color: #BFDBFE;
+}
+
+.delete-button {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.delete-button:hover {
+    background-color: #FECACA;
+}
+
+
+/* MENSAJE CUANDO NO EXISTEN USUARIOS */
+
+.empty-users {
+    padding: 35px;
+    text-align: center;
+
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+
+/* OCULTAR ELEMENTOS */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .users-form-section,
+    .users-table-section {
+        padding: 22px;
+    }
+
+    .users-form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .users-form-actions {
+        flex-direction: column;
+    }
+
+    #submit-user,
+    #cancel-edit {
+        width: 100%;
+    }
+
+}
