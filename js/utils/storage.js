@@ -5,7 +5,7 @@
 // Claves utilizadas en localStorage
 const USERS_KEY = "acme_users";
 const SESSION_KEY = "acme_session";
-
+const EXAMS_KEY = "acme_exams";
 
 // ==========================================
 // OBTENER USUARIOS
@@ -115,4 +115,43 @@ export function initializeDefaultUser() {
     };
 
     saveUsers([defaultAdmin]);
+}
+
+// ==========================================
+// OBTENER EXÁMENES
+// ==========================================
+
+export function getExams() {
+
+    try {
+
+        const exams = localStorage.getItem(EXAMS_KEY);
+
+        return exams ? JSON.parse(exams) : [];
+
+    } catch (error) {
+
+        console.error("Error al obtener exámenes:", error);
+
+        return [];
+
+    }
+
+}
+
+
+// ==========================================
+// GUARDAR EXÁMENES
+// ==========================================
+
+export function saveExams(exams) {
+
+    if (!Array.isArray(exams)) {
+
+        throw new TypeError("Los exámenes deben estar en un arreglo.");
+
+    }
+
+    localStorage.setItem(EXAMS_KEY, JSON.stringify(exams));
+
 }

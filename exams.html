@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de exámenes | Acme School</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/exams.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ENCABEZADO -->
+    <app-header></app-header>
+
+    <!-- DISTRIBUCIÓN PRINCIPAL -->
+    <div class="dashboard-layout">
+
+        <!-- MENÚ LATERAL -->
+        <app-sidebar></app-sidebar>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="dashboard-content">
+
+            <!-- PRESENTACIÓN -->
+            <section class="dashboard-welcome">
+
+                <span class="welcome-tag">PANEL ADMINISTRATIVO</span>
+
+                <h1>Gestión de exámenes</h1>
+
+                <p>
+                    Crea, administra y configura las evaluaciones
+                    de Acme School.
+                </p>
+
+            </section>
+
+
+            <!-- FORMULARIO DE EXÁMENES -->
+            <section class="exams-form-section">
+
+                <div class="section-heading">
+
+                    <h2 id="exam-form-title">Crear examen</h2>
+
+                    <p>
+                        Completa los datos para configurar una nueva evaluación.
+                    </p>
+
+                </div>
+
+                <form id="exam-form">
+
+                    <input type="hidden" id="exam-id">
+
+                    <div class="exams-form-grid">
+
+                        <!-- CÓDIGO -->
+                        <div class="form-group">
+
+                            <label for="exam-code">Código del examen</label>
+
+                            <input
+                                type="text"
+                                id="exam-code"
+                                placeholder="Ej. ACME-001"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TÍTULO -->
+                        <div class="form-group">
+
+                            <label for="exam-title">Título del examen</label>
+
+                            <input
+                                type="text"
+                                id="exam-title"
+                                placeholder="Ej. Evaluación de matemáticas"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TIEMPO -->
+                        <div class="form-group">
+
+                            <label for="exam-duration">
+                                Tiempo (minutos)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="exam-duration"
+                                min="1"
+                                max="300"
+                                placeholder="Ej. 60"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PORCENTAJE DE APROBACIÓN -->
+                        <div class="form-group">
+
+                            <label for="exam-passing">
+                                Porcentaje de aprobación (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="exam-passing"
+                                min="0"
+                                max="100"
+                                placeholder="Ej. 70"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DESCRIPCIÓN -->
+                        <div class="form-group full-width">
+
+                            <label for="exam-description">
+                                Descripción del examen
+                            </label>
+
+                            <textarea
+                                id="exam-description"
+                                rows="4"
+                                placeholder="Describe el contenido y objetivo de la evaluación..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MENSAJES -->
+                    <div
+                        id="exams-message"
+                        class="exams-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <!-- BOTONES -->
+                    <div class="exams-form-actions">
+
+                        <button type="submit" id="submit-exam">
+                            Crear examen
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancel-exam-edit"
+                            hidden
+                        >
+                            Cancelar edición
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- TABLA DE EXÁMENES -->
+            <section class="exams-table-section">
+
+                <div class="section-heading">
+
+                    <h2>Exámenes registrados</h2>
+
+                    <p>
+                        Consulta y administra las evaluaciones disponibles.
+                    </p>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Código</th>
+                                <th>Título</th>
+                                <th>Tiempo</th>
+                                <th>Aprobación</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="exams-table-body">
+
+                            <!-- Los exámenes se cargarán con JavaScript -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- PIE DE PÁGINA -->
+            <footer class="dashboard-footer">
+
+                © 2026 Acme School. Todos los derechos reservados.
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>

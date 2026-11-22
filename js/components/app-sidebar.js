@@ -26,7 +26,7 @@ class AppSidebar extends HTMLElement {
                         Gestión de usuarios
                     </a>
 
-                    <a href="#exams" class="nav-item">
+                    <a href="exams.html" class="nav-item">
                         <span>▤</span>
                         Gestión de exámenes
                     </a>

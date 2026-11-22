@@ -2,11 +2,15 @@
 import "./components/app-header.js";
 import "./components/app-sidebar.js";
 import { initializeUsersModule } from "./modules/users.js";
+import { initializeExamsModule } from "./modules/exams.js";
 // ==========================================
 // ACME SCHOOL - APLICACIÓN PRINCIPAL
 // ==========================================
 
-import { initializeDefaultUser } from "./utils/storage.js";
+import {
+    initializeDefaultUser,
+    getUsers
+} from "./utils/storage.js";
 
 import {
     login,
@@ -31,7 +35,7 @@ function initializeApp() {
 
     // PROTEGER DASHBOARD
 
-if (["dashboard.html", "users.html"].includes(currentPage)) {
+if (["dashboard.html", "users.html", "exams.html"].includes(currentPage)) {
 
         if (!isAuthenticated()) {
 
@@ -67,6 +71,20 @@ if (appSidebar) {
 if (currentPage === "users.html") {
 
     initializeUsersModule();
+
+}
+
+// Inicializar gestión de exámenes
+if (currentPage === "exams.html") {
+
+    initializeExamsModule();
+
+}
+
+// Inicializar estadísticas del dashboard
+if (currentPage === "dashboard.html") {
+
+    initializeDashboardStats();
 
 }
 
@@ -134,6 +152,26 @@ function handleLogout() {
 
 }
 
+// ==========================================
+// ACTUALIZAR ESTADÍSTICAS DEL DASHBOARD
+// ==========================================
+
+function initializeDashboardStats() {
+
+    // Obtener usuarios registrados
+    const users = getUsers();
+
+    // Obtener contador de usuarios
+    const usersCount = document.getElementById("users-count");
+
+    // Actualizar contador
+    if (usersCount) {
+
+        usersCount.textContent = users.length;
+
+    }
+
+}
 
 // ==========================================
 // EJECUTAR APLICACIÓN
