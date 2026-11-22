@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Acme School</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ENCABEZADO -->
+<app-header></app-header>
+
+    <!-- DISTRIBUCIÓN PRINCIPAL -->
+    <div class="dashboard-layout">
+
+        <!-- MENÚ LATERAL -->
+ <app-sidebar></app-sidebar>
+
+
+        <!-- CONTENIDO -->
+        <main class="dashboard-content">
+
+            <!-- BIENVENIDA -->
+            <section id="overview" class="dashboard-welcome">
+
+                <div>
+                    <span class="welcome-tag">PANEL ADMINISTRATIVO</span>
+
+                    <h1>¡Bienvenido a Acme School!</h1>
+
+                    <p>
+                        Administra tus usuarios y evaluaciones
+                        desde un solo lugar.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- ESTADÍSTICAS -->
+            <section class="stats-section">
+
+                <div class="section-heading">
+                    <h2>Resumen general</h2>
+                    <p>Información de la plataforma</p>
+                </div>
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon users-icon">♙</div>
+
+                        <div>
+                            <span>Usuarios registrados</span>
+                            <strong id="users-count">0</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon exams-icon">▤</div>
+
+                        <div>
+                            <span>Exámenes creados</span>
+                            <strong id="exams-count">0</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon results-icon">✓</div>
+
+                        <div>
+                            <span>Evaluaciones realizadas</span>
+                            <strong id="results-count">0</strong>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- MÓDULOS -->
+            <section class="modules-section">
+
+                <div class="section-heading">
+                    <h2>Administración</h2>
+                    <p>Accede a los módulos de gestión.</p>
+                </div>
+
+
+                <div class="modules-grid">
+
+                    <article id="users" class="module-card">
+
+                        <div class="module-icon">♙</div>
+
+                        <h3>Gestión de usuarios</h3>
+
+                        <p>
+                            Registra, consulta, actualiza y elimina
+                            usuarios de la plataforma.
+                        </p>
+
+                        <a href="#users" class="module-link">
+                            Administrar usuarios →
+                        </a>
+
+                    </article>
+
+
+                    <article id="exams" class="module-card">
+
+                        <div class="module-icon">▤</div>
+
+                        <h3>Gestión de exámenes</h3>
+
+                        <p>
+                            Crea evaluaciones, configura preguntas
+                            y administra sus respuestas.
+                        </p>
+
+                        <a href="#exams" class="module-link">
+                            Administrar exámenes →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- PIE DE PÁGINA -->
+            <footer class="dashboard-footer">
+                © 2026 Acme School. Todos los derechos reservados.
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>
