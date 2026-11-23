@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestión de preguntas | Acme School</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/questions.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ENCABEZADO -->
+    <app-header></app-header>
+
+    <!-- DISTRIBUCIÓN PRINCIPAL -->
+    <div class="dashboard-layout">
+
+        <!-- MENÚ LATERAL -->
+        <app-sidebar></app-sidebar>
+
+        <!-- CONTENIDO -->
+        <main class="dashboard-content">
+
+            <!-- PRESENTACIÓN -->
+            <section class="dashboard-welcome">
+
+                <span class="welcome-tag">PANEL ADMINISTRATIVO</span>
+
+                <h1>Constructor de preguntas</h1>
+
+                <p>
+                    Administra las preguntas y respuestas de cada evaluación.
+                </p>
+
+                <a href="exams.html" class="back-link">
+                    ← Volver a gestión de exámenes
+                </a>
+
+            </section>
+
+
+            <!-- INFORMACIÓN DEL EXAMEN -->
+            <section class="selected-exam-card">
+
+                <div>
+                    <span class="exam-label">EXAMEN SELECCIONADO</span>
+
+                    <h2 id="selected-exam-title">
+                        Cargando examen...
+                    </h2>
+
+                    <p id="selected-exam-description"></p>
+                </div>
+
+                <div class="selected-exam-details">
+
+                    <span>
+                        Código: <strong id="selected-exam-code"></strong>
+                    </span>
+
+                    <span>
+                        Tiempo: <strong id="selected-exam-duration"></strong>
+                    </span>
+
+                    <span>
+                        Aprobación: <strong id="selected-exam-passing"></strong>
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- FORMULARIO DE PREGUNTAS -->
+            <section class="questions-form-section">
+
+                <div class="section-heading">
+
+                    <h2 id="question-form-title">Crear pregunta</h2>
+
+                    <p>
+                        Escribe la pregunta y configura sus posibles respuestas.
+                    </p>
+
+                </div>
+
+                <form id="question-form">
+
+                    <input type="hidden" id="question-id">
+
+                    <!-- DESCRIPCIÓN DE LA PREGUNTA -->
+                    <div class="form-group">
+
+                        <label for="question-text">
+                            Enunciado de la pregunta
+                        </label>
+
+                        <textarea
+                            id="question-text"
+                            rows="3"
+                            placeholder="Escribe aquí el enunciado de la pregunta..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- RESPUESTAS -->
+                    <div class="answers-section">
+
+                        <div class="answers-heading">
+
+                            <div>
+                                <h3>Posibles respuestas</h3>
+
+                                <p>
+                                    Marca el círculo de la respuesta correcta.
+                                </p>
+                            </div>
+
+                            <span class="correct-indicator">
+                                Una sola correcta
+                            </span>
+
+                        </div>
+
+
+                        <!-- CONTENEDOR DINÁMICO -->
+                        <div id="answers-container">
+
+                            <!-- JavaScript generará las respuestas aquí -->
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="add-answer"
+                            class="add-answer-button"
+                        >
+                            + Agregar respuesta
+                        </button>
+
+                    </div>
+
+
+                    <!-- MENSAJES -->
+                    <div
+                        id="questions-message"
+                        class="questions-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></div>
+
+
+                    <!-- ACCIONES -->
+                    <div class="questions-form-actions">
+
+                        <button type="submit" id="submit-question">
+                            Guardar pregunta
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancel-question-edit"
+                            hidden
+                        >
+                            Cancelar edición
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- LISTADO DE PREGUNTAS -->
+            <section class="questions-list-section">
+
+                <div class="section-heading">
+
+                    <h2>Preguntas registradas</h2>
+
+                    <p>
+                        Preguntas asociadas a este examen.
+                    </p>
+
+                </div>
+
+                <div id="questions-list">
+
+                    <!-- JavaScript mostrará las preguntas -->
+
+                </div>
+
+            </section>
+
+
+            <!-- PIE DE PÁGINA -->
+            <footer class="dashboard-footer">
+
+                © 2026 Acme School. Todos los derechos reservados.
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>

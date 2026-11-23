@@ -163,7 +163,26 @@ function renderExams() {
         deleteButton.dataset.examId = String(exam.id);
 
 
-        actionsCell.append(editButton, deleteButton);
+        // Botón gestionar preguntas
+        const questionsButton = document.createElement("button");
+
+        questionsButton.type = "button";
+
+        questionsButton.textContent = "Preguntas";
+
+        questionsButton.className = "action-button questions-button";
+
+        questionsButton.dataset.action = "questions";
+
+        questionsButton.dataset.examId = String(exam.id);
+
+
+        // Agregar botones a la celda
+        actionsCell.append(
+            editButton,
+            questionsButton,
+            deleteButton
+        );
 
         row.appendChild(actionsCell);
 
@@ -467,6 +486,13 @@ function handleTableActions(event) {
     if (action === "delete") {
 
         deleteExam(examId);
+
+    }
+
+    if (action === "questions") {
+
+        window.location.href =
+            `questions.html?examId=${encodeURIComponent(examId)}`;
 
     }
 

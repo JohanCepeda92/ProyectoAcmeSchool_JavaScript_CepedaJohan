@@ -3,6 +3,7 @@ import "./components/app-header.js";
 import "./components/app-sidebar.js";
 import { initializeUsersModule } from "./modules/users.js";
 import { initializeExamsModule } from "./modules/exams.js";
+import { initializeQuestionsModule } from "./modules/questions.js";
 // ==========================================
 // ACME SCHOOL - APLICACIÓN PRINCIPAL
 // ==========================================
@@ -35,7 +36,7 @@ function initializeApp() {
 
     // PROTEGER DASHBOARD
 
-if (["dashboard.html", "users.html", "exams.html"].includes(currentPage)) {
+if (["dashboard.html", "users.html", "exams.html", "questions.html"].includes(currentPage)) {
 
         if (!isAuthenticated()) {
 
@@ -78,6 +79,13 @@ if (currentPage === "users.html") {
 if (currentPage === "exams.html") {
 
     initializeExamsModule();
+
+}
+
+// Inicializar constructor de preguntas
+if (currentPage === "questions.html") {
+
+    initializeQuestionsModule();
 
 }
 
