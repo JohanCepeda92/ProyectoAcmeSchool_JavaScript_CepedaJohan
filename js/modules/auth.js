@@ -71,7 +71,33 @@ export function logout() {
 
 export function getCurrentUser() {
 
-    return getSession();
+    const session = getSession();
+
+    if (!session) {
+
+        return null;
+
+    }
+
+    // La sesión solo es válida mientras exista su usuario en el registro actual.
+    const user = getUsers().find(registeredUser =>
+
+        String(registeredUser.id) === String(session.id)
+
+    );
+
+    if (!user) {
+
+        clearSession();
+
+        return null;
+
+    }
+
+    // Devolver los datos actuales del usuario, sin exponer su contraseña.
+    const { password: userPassword, ...currentUser } = user;
+
+    return currentUser;
 
 }
 
@@ -82,6 +108,6 @@ export function getCurrentUser() {
 
 export function isAuthenticated() {
 
-    return Boolean(getSession());
+    return Boolean(getCurrentUser());
 
 }

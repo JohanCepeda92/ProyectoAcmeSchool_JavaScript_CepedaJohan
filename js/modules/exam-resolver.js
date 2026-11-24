@@ -17,7 +17,7 @@ const examCatalog = document.getElementById("exam-catalog");
 
 const availableExams = document.getElementById("available-exams");
 
-const studentIdentification = document.getElementById("student-identification");
+const studentIdentification = document.getElementById("student-identification-section");
 
 const studentForm = document.getElementById("student-form");
 

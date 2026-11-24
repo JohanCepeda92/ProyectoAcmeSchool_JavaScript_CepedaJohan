@@ -11,7 +11,9 @@ import { initializeExamResolver } from "./modules/exam-resolver.js";
 
 import {
     initializeDefaultUser,
-    getUsers
+    getUsers,
+    getExams,
+    getResults
 } from "./utils/storage.js";
 
 import {
@@ -48,15 +50,14 @@ function initializeApp() {
 
     if (["dashboard.html", "users.html", "exams.html", "questions.html"].includes(currentPage)) {
 
-        if (!isAuthenticated()) {
+        const user = getCurrentUser();
+
+        if (!user) {
 
             window.location.replace("index.html");
             return;
 
         }
-
-        // Obtener información del usuario
-        const user = getCurrentUser();
 
         // Actualizar encabezado
         const appHeader = document.querySelector("app-header");
@@ -176,17 +177,33 @@ function handleLogout() {
 
 function initializeDashboardStats() {
 
-    // Obtener usuarios registrados
+    // Obtener información de LocalStorage
     const users = getUsers();
 
-    // Obtener contador de usuarios
+    const exams = getExams();
+
+    const results = getResults();
+
+
+    // Obtener contadores HTML
     const usersCount = document.getElementById("users-count");
 
-    // Actualizar contador
+    const examsCount = document.getElementById("exams-count");
+
+    const resultsCount = document.getElementById("results-count");
+
+
+    // Actualizar estadísticas
     if (usersCount) {
-
         usersCount.textContent = users.length;
+    }
 
+    if (examsCount) {
+        examsCount.textContent = exams.length;
+    }
+
+    if (resultsCount) {
+        resultsCount.textContent = results.length;
     }
 
 }

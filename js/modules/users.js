@@ -464,6 +464,10 @@ function deleteUser(id) {
 
         saveUsers(updatedUsers);
 
+        // Revalidar la sesión contra la lista actualizada e invalidarla si
+        // correspondía al usuario que acaba de eliminarse.
+        getCurrentUser();
+
         renderUsers();
 
         showMessage("Usuario eliminado correctamente.", "success");
