@@ -1,0 +1,419 @@
+/* =========================================
+   ACME SCHOOL - RESOLUCIÓN DE EXÁMENES
+========================================= */
+
+.resolver-page {
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+/* ENCABEZADO */
+
+.public-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.public-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--primary-dark);
+}
+
+.public-header .brand-icon {
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(135deg, #2563EB, #60A5FA);
+
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+
+    border-radius: 12px;
+}
+
+.public-header .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.public-header .brand-name {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.public-header .brand-subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+}
+
+.public-header .header-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+}
+
+
+/* CONTENIDO PRINCIPAL */
+
+.resolver-main {
+    width: min(1050px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 55px 0;
+    flex: 1;
+}
+
+.resolver-welcome {
+    margin-bottom: 40px;
+}
+
+.resolver-welcome h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+}
+
+.resolver-welcome p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+
+/* ENCABEZADOS */
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 21px;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+
+/* CATÁLOGO */
+
+.available-exams {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.available-exam-card {
+    padding: 25px;
+
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    transition: 0.2s;
+}
+
+.available-exam-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.available-exam-card h3 {
+    font-size: 18px;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+}
+
+.available-exam-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.available-exam-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.available-exam-details span {
+    padding: 7px 10px;
+
+    background-color: #EFF6FF;
+    color: var(--primary-color);
+
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.start-exam-button {
+    width: 100%;
+    padding: 13px;
+
+    background-color: var(--primary-color);
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.start-exam-button:hover {
+    background-color: #1D4ED8;
+}
+
+
+/* IDENTIFICACIÓN */
+
+.student-card {
+    max-width: 650px;
+    margin: 30px auto;
+
+    padding: 35px;
+
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.student-card .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.student-card label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.student-card input {
+    width: 100%;
+    padding: 14px;
+
+    background-color: #F8FAFC;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+
+    font-size: 13px;
+    outline: none;
+}
+
+.student-card input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#start-exam {
+    width: 100%;
+    padding: 14px;
+
+    background-color: var(--primary-color);
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ENLACE DE REGRESO */
+
+.back-link {
+    padding: 0;
+    background: none;
+    border: none;
+
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ENCABEZADO DEL EXAMEN */
+
+.exam-header-card {
+    padding: 28px;
+    margin-bottom: 22px;
+
+    background: linear-gradient(135deg, #172554, #1E40AF);
+    color: white;
+
+    border-radius: 14px;
+}
+
+.exam-header-card h2 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.exam-header-card p {
+    color: #DBEAFE;
+    font-size: 13px;
+}
+
+.exam-information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,0.2);
+
+    font-size: 12px;
+    color: #DBEAFE;
+}
+
+.exam-information strong {
+    color: white;
+}
+
+
+/* CRONÓMETRO */
+
+.timer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 25px;
+    margin-bottom: 25px;
+
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.timer-card span {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.timer-card strong {
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+.timer-card.warning strong {
+    color: #DC2626;
+}
+
+
+/* RESULTADOS Y MENSAJES */
+
+.resolver-message {
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.resolver-message.error {
+    color: #DC2626;
+}
+
+.resolver-message.success {
+    color: #16A34A;
+}
+
+
+/* PIE DE PÁGINA */
+
+.public-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 22px 7%;
+
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+
+/* ELEMENTOS OCULTOS */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+
+    .available-exams {
+        grid-template-columns: 1fr;
+    }
+
+    .student-card {
+        padding: 25px 20px;
+    }
+
+    .public-header {
+        padding: 18px 22px;
+    }
+
+    .public-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .public-header .header-label {
+        display: none;
+    }
+
+    .resolver-main {
+        padding: 35px 0;
+    }
+
+    .exam-information {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .timer-card strong {
+        font-size: 23px;
+    }
+
+}

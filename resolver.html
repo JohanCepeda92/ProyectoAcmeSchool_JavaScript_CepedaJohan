@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exámenes disponibles | Acme School</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/exam.css">
+</head>
+
+<body class="resolver-page">
+
+    <!-- ENCABEZADO -->
+    <header class="public-header">
+
+        <a href="resolver.html" class="brand">
+
+            <div class="brand-icon">A</div>
+
+            <div class="brand-text">
+                <span class="brand-name">ACME</span>
+                <span class="brand-subtitle">SCHOOL</span>
+            </div>
+
+        </a>
+
+        <span class="header-label">
+            PLATAFORMA DE EVALUACIÓN
+        </span>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="resolver-main">
+
+        <!-- INTRODUCCIÓN -->
+        <section class="resolver-welcome">
+
+            <span class="welcome-tag">ACME SCHOOL</span>
+
+            <h1>Tu conocimiento, tu oportunidad.</h1>
+
+            <p>
+                Consulta las evaluaciones disponibles y demuestra
+                todo lo que has aprendido.
+            </p>
+
+        </section>
+
+
+        <!-- MENSAJES -->
+        <div
+            id="resolver-message"
+            class="resolver-message"
+            role="alert"
+            aria-live="polite"
+        ></div>
+
+
+        <!-- CATÁLOGO DE EXÁMENES -->
+        <section id="exam-catalog">
+
+            <div class="section-heading">
+
+                <h2>Exámenes disponibles</h2>
+
+                <p>
+                    Selecciona una evaluación para comenzar.
+                </p>
+
+            </div>
+
+            <div id="available-exams" class="available-exams">
+
+                <!-- Los exámenes se cargarán mediante JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- IDENTIFICACIÓN DEL ESTUDIANTE -->
+        <section id="student-identification" hidden>
+
+            <button
+                type="button"
+                id="back-to-catalog"
+                class="back-link"
+            >
+                ← Volver a los exámenes
+            </button>
+
+            <div class="student-card">
+
+                <div class="section-heading">
+
+                    <h2>Identificación del estudiante</h2>
+
+                    <p>
+                        Ingresa tus datos para comenzar la evaluación.
+                    </p>
+
+                </div>
+
+                <form id="student-form">
+
+                    <div class="form-group">
+
+                        <label for="student-identification">
+                            Número de identificación
+                        </label>
+
+                        <input
+                            type="text"
+                            id="student-identification"
+                            required
+                            placeholder="Ingresa tu identificación"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="student-name">
+                            Nombre completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="student-name"
+                            required
+                            placeholder="Ingresa tu nombre completo"
+                        >
+
+                    </div>
+
+                    <button type="submit" id="start-exam">
+                        Comenzar examen →
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESARROLLO DEL EXAMEN -->
+        <section id="exam-view" hidden>
+
+            <div class="exam-header-card">
+
+                <div>
+
+                    <span class="exam-label">
+                        EVALUACIÓN EN CURSO
+                    </span>
+
+                    <h2 id="exam-title-display"></h2>
+
+                    <p id="exam-description-display"></p>
+
+                </div>
+
+                <div class="exam-information">
+
+                    <span>
+                        Preguntas:
+                        <strong id="exam-question-count">0</strong>
+                    </span>
+
+                    <span>
+                        Para aprobar:
+                        <strong id="exam-passing-display">0%</strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CRONÓMETRO -->
+            <div class="timer-card">
+
+                <span>TIEMPO RESTANTE</span>
+
+                <strong id="exam-timer">00:00</strong>
+
+            </div>
+
+
+            <!-- PREGUNTAS -->
+            <form id="exam-form">
+
+                <div id="exam-questions">
+
+                    <!-- Las preguntas aparecerán aquí -->
+
+                </div>
+
+                <button type="submit" id="finish-exam">
+                    Terminar examen
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- RESULTADOS -->
+        <section id="exam-result" hidden>
+
+            <div class="result-card">
+
+                <span class="result-label">
+                    RESULTADO DE LA EVALUACIÓN
+                </span>
+
+                <h2 id="result-status"></h2>
+
+                <div class="result-percentage">
+
+                    <strong id="result-percentage">0%</strong>
+
+                    <span>Porcentaje obtenido</span>
+
+                </div>
+
+                <p id="result-student"></p>
+
+                <p id="result-detail"></p>
+
+                <button type="button" id="return-catalog">
+                    Volver a los exámenes
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="public-footer">
+
+        <p>
+            © 2026 Acme School. Todos los derechos reservados.
+        </p>
+
+        <span>Plataforma de evaluación académica</span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -4,6 +4,7 @@ import "./components/app-sidebar.js";
 import { initializeUsersModule } from "./modules/users.js";
 import { initializeExamsModule } from "./modules/exams.js";
 import { initializeQuestionsModule } from "./modules/questions.js";
+import { initializeExamResolver } from "./modules/exam-resolver.js";
 // ==========================================
 // ACME SCHOOL - APLICACIÓN PRINCIPAL
 // ==========================================
@@ -33,10 +34,19 @@ function initializeApp() {
 
     const loginForm = document.getElementById("login-form");
 
+    // Inicializar plataforma pública de exámenes
+    if (currentPage === "resolver.html") {
+
+        initializeExamResolver();
+
+        return;
+
+    }
+
 
     // PROTEGER DASHBOARD
 
-if (["dashboard.html", "users.html", "exams.html", "questions.html"].includes(currentPage)) {
+    if (["dashboard.html", "users.html", "exams.html", "questions.html"].includes(currentPage)) {
 
         if (!isAuthenticated()) {
 
@@ -45,56 +55,56 @@ if (["dashboard.html", "users.html", "exams.html", "questions.html"].includes(cu
 
         }
 
-// Obtener información del usuario
-const user = getCurrentUser();
+        // Obtener información del usuario
+        const user = getCurrentUser();
 
-// Actualizar encabezado
-const appHeader = document.querySelector("app-header");
+        // Actualizar encabezado
+        const appHeader = document.querySelector("app-header");
 
-if (user && appHeader) {
+        if (user && appHeader) {
 
-    appHeader.setAttribute("user-name", user.fullName);
+            appHeader.setAttribute("user-name", user.fullName);
 
-    appHeader.setAttribute("user-role", user.position);
+            appHeader.setAttribute("user-role", user.position);
 
-}
+        }
 
-// Escuchar evento de cierre de sesión
-const appSidebar = document.querySelector("app-sidebar");
+        // Escuchar evento de cierre de sesión
+        const appSidebar = document.querySelector("app-sidebar");
 
-if (appSidebar) {
+        if (appSidebar) {
 
-    appSidebar.addEventListener("logout", handleLogout);
+            appSidebar.addEventListener("logout", handleLogout);
 
-}
+        }
 
-// Inicializar gestión de usuarios
-if (currentPage === "users.html") {
+        // Inicializar gestión de usuarios
+        if (currentPage === "users.html") {
 
-    initializeUsersModule();
+            initializeUsersModule();
 
-}
+        }
 
-// Inicializar gestión de exámenes
-if (currentPage === "exams.html") {
+        // Inicializar gestión de exámenes
+        if (currentPage === "exams.html") {
 
-    initializeExamsModule();
+            initializeExamsModule();
 
-}
+        }
 
-// Inicializar constructor de preguntas
-if (currentPage === "questions.html") {
+        // Inicializar constructor de preguntas
+        if (currentPage === "questions.html") {
 
-    initializeQuestionsModule();
+            initializeQuestionsModule();
 
-}
+        }
 
-// Inicializar estadísticas del dashboard
-if (currentPage === "dashboard.html") {
+        // Inicializar estadísticas del dashboard
+        if (currentPage === "dashboard.html") {
 
-    initializeDashboardStats();
+            initializeDashboardStats();
 
-}
+        }
 
         return;
 

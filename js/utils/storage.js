@@ -6,6 +6,7 @@
 const USERS_KEY = "acme_users";
 const SESSION_KEY = "acme_session";
 const EXAMS_KEY = "acme_exams";
+const RESULTS_KEY = "acme_results";
 
 // ==========================================
 // OBTENER USUARIOS
@@ -153,5 +154,43 @@ export function saveExams(exams) {
     }
 
     localStorage.setItem(EXAMS_KEY, JSON.stringify(exams));
+
+}
+
+// ==========================================
+// OBTENER RESULTADOS DE EXÁMENES
+// ==========================================
+
+export function getResults() {
+
+    try {
+
+        const results = localStorage.getItem(RESULTS_KEY);
+
+        return results ? JSON.parse(results) : [];
+
+    } catch (error) {
+
+        console.error("Error al obtener resultados:", error);
+
+        return [];
+
+    }
+
+}
+
+// ==========================================
+// GUARDAR RESULTADOS DE EXÁMENES
+// ==========================================
+
+export function saveResults(results) {
+
+    if (!Array.isArray(results)) {
+
+        throw new TypeError("Los resultados deben estar en un arreglo.");
+
+    }
+
+    localStorage.setItem(RESULTS_KEY, JSON.stringify(results));
 
 }
