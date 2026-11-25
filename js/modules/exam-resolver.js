@@ -2,6 +2,8 @@
 // ACME SCHOOL - RESOLUCIÓN DE EXÁMENES
 // ==========================================
 
+import "../components/exam-card.js";
+
 import {
     getExams,
     getResults,
@@ -43,6 +45,10 @@ const examDescriptionDisplay = document.getElementById("exam-description-display
 const examQuestionCount = document.getElementById("exam-question-count");
 
 const examPassingDisplay = document.getElementById("exam-passing-display");
+
+const examStudentName = document.getElementById("exam-student-name");
+
+const examStudentIdentification = document.getElementById("exam-student-identification");
 
 
 // ==========================================
@@ -126,7 +132,6 @@ function renderAvailableExams() {
 
     availableExams.replaceChildren();
 
-
     if (exams.length === 0) {
 
         const message = document.createElement("p");
@@ -142,71 +147,22 @@ function renderAvailableExams() {
 
     }
 
-
     exams.forEach(exam => {
 
-        const card = document.createElement("article");
+        const card = document.createElement("acme-exam-card");
 
-        card.className = "available-exam-card";
-
-
-        // Título
-        const title = document.createElement("h3");
-
-        title.textContent = exam.title;
-
-
-        // Descripción
-        const description = document.createElement("p");
-
-        description.textContent = exam.description;
-
-
-        // Información
-        const details = document.createElement("div");
-
-        details.className = "available-exam-details";
-
-
-        const duration = document.createElement("span");
-
-        duration.textContent = `${exam.duration} minutos`;
-
-
-        const passing = document.createElement("span");
-
-        passing.textContent = `Aprobación: ${exam.passingPercentage}%`;
-
-
-        const questionCount = document.createElement("span");
-
-        questionCount.textContent =
-            `${exam.questions.length} preguntas`;
-
-
-        details.append(duration, passing, questionCount);
-
-
-        // Botón para comenzar
-        const button = document.createElement("button");
-
-        button.type = "button";
-
-        button.className = "start-exam-button";
-
-        button.textContent = "Presentar examen →";
-
-        button.dataset.examId = String(exam.id);
-
-
-        card.append(title, description, details, button);
+        card.setAttribute("exam-id", String(exam.id));
+        card.setAttribute("title", exam.title);
+        card.setAttribute("description", exam.description);
+        card.setAttribute("duration", String(exam.duration));
+        card.setAttribute("passing-percentage", String(exam.passingPercentage));
+        card.setAttribute("question-count", String(exam.questions.length));
 
         availableExams.appendChild(card);
 
     });
 
 }
-
 
 // ==========================================
 // SELECCIONAR EXAMEN
@@ -333,6 +289,10 @@ function startExam() {
 
 
     examTitleDisplay.textContent = selectedExam.title;
+
+    examStudentName.textContent = student.name;
+
+    examStudentIdentification.textContent = student.identification;
 
     examDescriptionDisplay.textContent = selectedExam.description;
 
@@ -685,21 +645,20 @@ export function initializeExamResolver() {
     renderAvailableExams();
 
 
-    // Seleccionar examen
-    availableExams.addEventListener("click", event => {
+    // Seleccionar examen mediante el evento compuesto de la tarjeta
+    availableExams.addEventListener("exam-select", event => {
 
-        const button = event.target.closest("button[data-exam-id]");
+        const examId = event.detail?.examId;
 
-        if (!button) {
+        if (examId === undefined || examId === null) {
 
             return;
 
         }
 
-        selectExam(button.dataset.examId);
+        selectExam(examId);
 
     });
-
 
     // Iniciar con identificación
     studentForm.addEventListener("submit", event => {

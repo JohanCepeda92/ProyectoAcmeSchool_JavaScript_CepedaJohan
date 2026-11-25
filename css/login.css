@@ -1,401 +1,131 @@
-/* =========================================
-   ACME SCHOOL - LOGIN
-========================================= */
-
-/* ENCABEZADO */
-
+/* ACME SCHOOL - PORTAL DE ACCESO */
 .login-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 20px 7%;
-
-    background-color: var(--white-color);
+    padding: 16px 7%;
+    background: var(--white-color);
     border-bottom: 1px solid var(--border-color);
 }
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    color: var(--primary-dark);
-}
-
+.brand { display: flex; align-items: center; gap: 12px; color: var(--primary-dark); }
 .brand-icon {
-    width: 45px;
-    height: 45px;
-
-    display: grid;
-    place-items: center;
-
-    background: linear-gradient(135deg, #2563EB, #60A5FA);
-
-    color: white;
-    font-size: 23px;
-    font-weight: bold;
-
-    border-radius: 12px;
+    width: 45px; height: 45px; display: grid; place-items: center;
+    background: linear-gradient(135deg, #2563EB, #60A5FA); color: white;
+    font-size: 23px; font-weight: bold; border-radius: 12px;
 }
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-}
-
-.brand-name {
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.brand-subtitle {
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--text-secondary);
-}
-
-.header-label {
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    color: var(--text-secondary);
-}
-
-
-/* CONTENIDO PRINCIPAL */
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name { font-size: 17px; font-weight: 800; letter-spacing: 2px; }
+.brand-subtitle { font-size: 10px; letter-spacing: 3px; color: var(--text-secondary); }
+.header-label { font-size: 11px; font-weight: bold; letter-spacing: 1.5px; color: var(--text-secondary); }
 
 .login-main {
-    width: min(1120px, calc(100% - 48px));
-
+    width: min(1040px, calc(100% - 40px));
     margin: auto;
+    padding: clamp(24px, 5vh, 52px) 0;
     flex: 1;
-
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
-
-
-/* DISTRIBUCIÓN DEL LOGIN */
-
 .login-container {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-
-    align-items: center;
-    gap: 70px;
-
-    padding: 60px 0 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
 }
-
-
-/* PRESENTACIÓN */
-
-.login-welcome {
-    position: relative;
-    overflow: hidden;
-
-    background: linear-gradient(135deg, #172554, #1E40AF);
-
-    padding: 65px 50px;
-
-    border-radius: 24px;
-
-    min-height: 430px;
-
+.access-card {
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    color: white;
-}
-
-.login-welcome::before {
-    content: "";
-
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    right: -100px;
-    top: -100px;
-
-    background: rgba(96, 165, 250, 0.15);
-
-    border-radius: 50%;
-}
-
-.login-welcome > * {
-    position: relative;
-    z-index: 1;
-}
-
-.welcome-tag {
-    display: inline-block;
-
-    color: #93C5FD;
-
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-
-    margin-bottom: 25px;
-}
-
-.login-welcome h1 {
-    font-size: clamp(32px, 4vw, 45px);
-    line-height: 1.15;
-
-    margin-bottom: 22px;
-}
-
-.login-welcome p {
-    max-width: 390px;
-
-    font-size: 15px;
-    color: #CBD5E1;
-}
-
-
-/* TARJETA DEL LOGIN */
-
-.login-card {
-    background-color: var(--white-color);
-
-    padding: 42px;
-
+    background: var(--white-color);
+    padding: clamp(24px, 3vw, 38px);
     border: 1px solid var(--border-color);
-    border-radius: 22px;
-
-    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.06);
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, .06);
+    animation: acme-rise-in .5s ease-out backwards;
+    transition: transform .2s ease, box-shadow .2s ease;
 }
-
-.login-card-header {
-    margin-bottom: 32px;
-}
-
-.login-card-header h2 {
-    font-size: 27px;
-    color: var(--primary-dark);
-
-    margin-bottom: 8px;
-}
-
-.login-card-header p {
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-
-/* FORMULARIO */
-
-.form-group {
-    margin-bottom: 22px;
-}
-
-.form-group label {
+.access-card:nth-child(2) { animation-delay: .12s; }
+.access-card:hover { transform: translateY(-3px); box-shadow: 0 17px 38px rgba(15, 23, 42, .1); }
+.staff-card { border-top: 4px solid var(--primary-color); }
+.student-card { border-top: 4px solid var(--secondary-color); }
+.login-card-header { margin-bottom: 24px; }
+.card-eyebrow {
     display: block;
-
-    font-size: 14px;
-    font-weight: 600;
-
     margin-bottom: 9px;
-}
-
-.form-group input {
-    width: 100%;
-
-    padding: 14px 15px;
-
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-
-    outline: none;
-
-    background-color: #F8FAFC;
-
-    font-size: 14px;
-
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.form-group input:focus {
-    border-color: var(--primary-color);
-
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-
-    background-color: white;
-}
-
-.form-group input::placeholder {
-    color: #94A3B8;
-}
-
-
-/* MENSAJES */
-
-.login-message {
-    color: #DC2626;
-    font-size: 13px;
-    margin-bottom: 12px;
-}
-
-
-/* BOTÓN */
-
-.login-button {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 15px 20px;
-
-    border: none;
-    border-radius: 10px;
-
-    background-color: var(--primary-color);
-    color: white;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.login-button:hover {
-    background-color: #1D4ED8;
-    transform: translateY(-2px);
-}
-
-.login-button span {
-    font-size: 20px;
-}
-
-
-/* PIE DE LA TARJETA */
-
-.login-card-footer {
-    margin-top: 25px;
-    padding-top: 20px;
-
-    border-top: 1px solid var(--border-color);
-
-    text-align: center;
-
-    font-size: 12px;
-    color: var(--text-secondary);
-}
-
-
-/* ACCESO PÚBLICO */
-
-.public-access {
-    text-align: center;
-
-    padding: 0 0 35px;
-
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.public-access a {
     color: var(--primary-color);
-    font-weight: bold;
-
-    margin-left: 5px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
-
-.public-access a:hover {
-    text-decoration: underline;
+.login-card-header h1, .student-card h2 {
+    color: var(--primary-dark);
+    font-size: clamp(23px, 2.5vw, 29px);
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
-
-
-/* PIE DE PÁGINA */
-
+.login-card-header p, .student-card > p { color: var(--text-secondary); font-size: 14px; }
+.form-group { margin-bottom: 17px; }
+.form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; }
+.form-group input {
+    width: 100%; padding: 12px 14px; border: 1px solid var(--border-color);
+    border-radius: 10px; outline: none; background: #F8FAFC; font-size: 14px;
+    transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+.form-group input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(37, 99, 235, .12); background: white; }
+.form-group input::placeholder { color: #94A3B8; }
+.login-message { color: #DC2626; font-size: 13px; margin-bottom: 12px; }
+.login-button, .student-button {
+    width: 100%; min-height: 48px; display: flex; justify-content: space-between;
+    align-items: center; padding: 12px 17px; border: 0; border-radius: 10px;
+    background: var(--primary-color); color: white; font-size: 15px; font-weight: bold;
+    transition: background-color .2s, transform .2s, box-shadow .2s;
+}
+.login-button:hover, .student-button:hover { background: #1D4ED8; transform: translateY(-2px); box-shadow: 0 7px 16px rgba(37, 99, 235, .2); }
+.login-button:focus-visible, .student-button:focus-visible { outline: 3px solid #93C5FD; outline-offset: 3px; }
+.login-button span, .student-button span { font-size: 20px; }
+.login-card-footer {
+    margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color);
+    text-align: center; font-size: 12px; color: var(--text-secondary);
+}
+.student-icon {
+    width: 100%;
+    height: 132px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    flex: 0 0 132px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #EFF6FF;
+}
+.student-icon img {
+    display: block;
+    width: min(216px, 100%);
+    height: 100%;
+    max-height: 132px;
+    object-fit: contain;
+}
+.student-card .card-eyebrow { margin-bottom: 8px; }
+.student-card h2 { margin-bottom: 10px; }
+.student-card > p { max-width: 360px; margin-bottom: 25px; }
+.student-button { margin-top: auto; text-decoration: none; }
+.student-note { margin-top: 12px; text-align: center; font-size: 12px; color: var(--text-secondary); }
 .login-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 22px 7%;
-
-    background-color: var(--white-color);
-    border-top: 1px solid var(--border-color);
-
-    font-size: 12px;
-    color: var(--text-secondary);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 7%; background: var(--white-color); border-top: 1px solid var(--border-color);
+    font-size: 12px; color: var(--text-secondary);
 }
 
-
-/* =========================================
-   DISEÑO RESPONSIVE
-========================================= */
-
-@media (max-width: 850px) {
-
-    .login-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .login-welcome {
-        min-height: 300px;
-        padding: 45px;
-    }
-
-    .login-welcome h1 {
-        font-size: 35px;
-    }
-
+@media (max-width: 700px) {
+    .login-main { width: min(520px, calc(100% - 32px)); padding: 24px 0; }
+    .login-container { grid-template-columns: 1fr; gap: 16px; }
+    .access-card { padding: 24px; }
+    .login-card-header { margin-bottom: 20px; }
+    .student-icon { margin-bottom: 14px; }
 }
-
-@media (max-width: 550px) {
-
-    .login-header {
-        padding: 18px 22px;
-    }
-
-    .header-label {
-        display: none;
-    }
-
-    .login-main {
-        width: calc(100% - 32px);
-    }
-
-    .login-container {
-        padding-top: 30px;
-    }
-
-    .login-welcome {
-        min-height: 250px;
-        padding: 30px;
-    }
-
-    .login-welcome h1 {
-        font-size: 30px;
-    }
-
-    .login-card {
-        padding: 28px 22px;
-    }
-
-    .public-access {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .login-footer {
-        flex-direction: column;
-        gap: 5px;
-        text-align: center;
-    }
-
+@media (max-width: 480px) {
+    .login-header { padding: 14px 20px; }
+    .header-label { display: none; }
+    .login-footer { flex-direction: column; gap: 4px; text-align: center; padding: 16px; }
 }

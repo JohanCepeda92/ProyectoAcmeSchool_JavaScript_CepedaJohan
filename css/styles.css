@@ -52,3 +52,35 @@ a {
 button {
     cursor: pointer;
 }
+
+:where(a, button, input):focus-visible {
+    outline: 3px solid #60A5FA;
+    outline-offset: 3px;
+}
+
+@keyframes acme-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes acme-rise-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-main,
+.dashboard-content,
+.resolver-main {
+    animation: acme-fade-in 0.45s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

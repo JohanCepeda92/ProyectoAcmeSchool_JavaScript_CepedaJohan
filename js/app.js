@@ -1,6 +1,7 @@
 // Importar Web Components
 import "./components/app-header.js";
 import "./components/app-sidebar.js";
+import "./components/stat-card.js";
 import { initializeUsersModule } from "./modules/users.js";
 import { initializeExamsModule } from "./modules/exams.js";
 import { initializeQuestionsModule } from "./modules/questions.js";
@@ -20,7 +21,8 @@ import {
     login,
     logout,
     isAuthenticated,
-    getCurrentUser
+    getCurrentUser,
+    hasPermission
 } from "./modules/auth.js";
 
 
@@ -59,6 +61,13 @@ function initializeApp() {
 
         }
 
+        if (currentPage === "users.html" && !hasPermission(user, "manage-users")) {
+
+            window.location.replace("dashboard.html");
+            return;
+
+        }
+
         // Actualizar encabezado
         const appHeader = document.querySelector("app-header");
 
@@ -72,6 +81,14 @@ function initializeApp() {
 
         // Escuchar evento de cierre de sesión
         const appSidebar = document.querySelector("app-sidebar");
+
+        if (appSidebar) {
+            appSidebar.setAttribute("user-role", user.position);
+        }
+
+        if (currentPage === "dashboard.html" && !hasPermission(user, "manage-users")) {
+            document.getElementById("users")?.remove();
+        }
 
         if (appSidebar) {
 
@@ -185,7 +202,7 @@ function initializeDashboardStats() {
     const results = getResults();
 
 
-    // Obtener contadores HTML
+    // Actualizar componentes de estadísticas mediante su atributo value
     const usersCount = document.getElementById("users-count");
 
     const examsCount = document.getElementById("exams-count");
@@ -193,19 +210,17 @@ function initializeDashboardStats() {
     const resultsCount = document.getElementById("results-count");
 
 
-    // Actualizar estadísticas
     if (usersCount) {
-        usersCount.textContent = users.length;
+        usersCount.setAttribute("value", String(users.length));
     }
 
     if (examsCount) {
-        examsCount.textContent = exams.length;
+        examsCount.setAttribute("value", String(exams.length));
     }
 
     if (resultsCount) {
-        resultsCount.textContent = results.length;
+        resultsCount.setAttribute("value", String(results.length));
     }
-
 }
 
 // ==========================================

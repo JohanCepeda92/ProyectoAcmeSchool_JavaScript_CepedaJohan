@@ -67,6 +67,11 @@
                     Selecciona una evaluación para comenzar.
                 </p>
 
+                <img
+                    class="catalog-illustration"
+                    src="assets/images/exam-catalog.svg"
+                    alt="Portapapeles con una evaluación completada y una marca de verificación"
+                >
             </div>
 
             <div id="available-exams" class="available-exams">
@@ -94,6 +99,11 @@
                     <p>
                         Ingresa tus datos para comenzar la evaluación.
                     </p>
+
+                    <div class="student-info-notice">
+                        <span class="info-icon" aria-hidden="true">i</span>
+                        <p>No necesitas una cuenta ni contraseña. Simplemente ingresa tu número de identificación y nombre completo para comenzar tu evaluación.</p>
+                    </div>
 
                 </div>
 
@@ -164,6 +174,14 @@
             </div>
 
 
+            <section class="exam-student-card" aria-label="Estudiante que presenta la evaluación">
+                <h3>ESTUDIANTE QUE PRESENTA LA EVALUACIÓN</h3>
+                <div class="exam-student-details">
+                    <p><span class="student-detail-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 20v-1.5a6.5 6.5 0 0 1 13 0V20h-13Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span>Nombre completo:</span> <strong id="exam-student-name"></strong></p>
+                    <p><span class="student-detail-icon id-icon" aria-hidden="true">#</span><span>Número de identificación:</span> <strong id="exam-student-identification"></strong></p>
+                </div>
+            </section>
+
             <!-- CRONÓMETRO -->
             <div class="timer-card">
 
@@ -215,9 +233,14 @@
 
                 <p id="result-detail"></p>
 
-                <button type="button" id="return-catalog">
-                    Volver a los exámenes
-                </button>
+                <div class="result-actions">
+                    <button type="button" id="return-catalog">
+                        Volver a los exámenes
+                    </button>
+                    <a class="return-home-button" href="index.html">
+                        Volver al inicio
+                    </a>
+                </div>
 
             </div>
 

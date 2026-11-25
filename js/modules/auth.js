@@ -10,6 +10,19 @@ import {
     getSession
 } from "../utils/storage.js";
 
+const ROLE_PERMISSIONS = {
+    Administrativo: ["dashboard", "manage-users", "manage-exams", "manage-questions"],
+    Docente: ["dashboard", "manage-exams", "manage-questions"]
+};
+
+export function hasPermission(user, permission) {
+    if (!user || !Array.isArray(ROLE_PERMISSIONS[user.position])) {
+        return false;
+    }
+
+    return ROLE_PERMISSIONS[user.position].includes(permission);
+}
+
 
 // ==========================================
 // INICIAR SESIÓN

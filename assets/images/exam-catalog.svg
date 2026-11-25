@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 190" fill="none">
+  <title>Portapapeles con una evaluación y una respuesta correcta</title>
+  <path d="M22 159c24-20 53-30 89-30s71 10 111 30v14H22v-14Z" fill="#DBEAFE"/>
+  <rect x="66" y="28" width="128" height="143" rx="13" fill="#fff" stroke="#2563EB" stroke-width="4"/>
+  <path d="M102 25c0-8 6-14 14-14h28c8 0 14 6 14 14v17h-56V25Z" fill="#60A5FA" stroke="#2563EB" stroke-width="4"/>
+  <rect x="85" y="61" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#60A5FA" stroke-width="3"/>
+  <path d="m89 69 4 4 8-9" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M113 68h54" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+  <rect x="85" y="95" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#60A5FA" stroke-width="3"/>
+  <path d="M113 104h43" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+  <rect x="85" y="129" width="18" height="18" rx="4" fill="#EFF6FF" stroke="#60A5FA" stroke-width="3"/>
+  <path d="M113 138h54" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="190" cy="136" r="30" fill="#2563EB"/>
+  <path d="m177 136 9 9 18-20" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 53h12M46 47v12M216 70h10M221 65v10" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+</svg>

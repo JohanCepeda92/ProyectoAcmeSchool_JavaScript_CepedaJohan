@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" fill="none">
+  <title>Espacio de aprendizaje con portátil, libros, birrete y lápices</title>
+  <defs>
+    <linearGradient id="screen" x1="126" y1="64" x2="246" y2="151" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="225" y1="29" x2="297" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M26 183c18-18 50-27 93-27h119c43 0 76 9 96 27v17H26v-17Z" fill="#DBEAFE"/>
+  <ellipse cx="178" cy="194" rx="139" ry="10" fill="#BFDBFE" opacity=".55"/>
+
+  <!-- Libros académicos -->
+  <path d="M39 163h74c6 0 10 4 10 9v19H49c-6 0-10-4-10-10v-18Z" fill="#2563EB"/>
+  <path d="M49 163v28M57 171h52" stroke="#BFDBFE" stroke-width="3" stroke-linecap="round"/>
+  <path d="M47 142h68c5 0 8 4 8 9v12H39v-12c0-5 3-9 8-9Z" fill="#fff" stroke="#60A5FA" stroke-width="3"/>
+  <path d="M54 150h48M54 157h37" stroke="#93C5FD" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Portátil -->
+  <rect x="100" y="67" width="161" height="101" rx="10" fill="#172554"/>
+  <rect x="107" y="74" width="147" height="87" rx="6" fill="url(#screen)"/>
+  <rect x="119" y="86" width="123" height="63" rx="5" fill="#fff"/>
+  <rect x="130" y="96" width="42" height="5" rx="2.5" fill="#2563EB"/>
+  <rect x="130" y="107" width="61" height="4" rx="2" fill="#BFDBFE"/>
+  <rect x="130" y="116" width="51" height="4" rx="2" fill="#BFDBFE"/>
+  <circle cx="218" cy="113" r="17" fill="#EFF6FF"/>
+  <path d="m210 113 6 6 11-13" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 169h185l-13 13H101l-13-13Z" fill="#1E3A8A"/>
+  <path d="M139 172h82" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Birrete -->
+  <path d="m220 46 39-19 39 19-39 19-39-19Z" fill="url(#cap)"/>
+  <path d="M233 53v14c15 11 37 11 52 0V53l-26 13-26-13Z" fill="#2563EB"/>
+  <path d="M298 46v27" stroke="#172554" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="298" cy="76" r="4" fill="#60A5FA"/>
+
+  <!-- Lápices -->
+  <path d="m285 113 25-42 8 5-25 42-8-5Z" fill="#60A5FA" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m285 113-4 12 12-7-8-5Z" fill="#F8FBFF" stroke="#2563EB" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m301 126 20-35 8 5-20 35-8-5Z" fill="#BFDBFE" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
+  <path d="m301 126-3 11 11-6-8-5Z" fill="#F8FBFF" stroke="#1E3A8A" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Detalles de estudio -->
+  <path d="M69 113h12M75 107v12M321 157h10M326 152v10" stroke="#60A5FA" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="82" cy="88" r="4" fill="#93C5FD"/>
+  <circle cx="318" cy="61" r="3" fill="#2563EB"/>
+</svg>

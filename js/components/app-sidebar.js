@@ -4,6 +4,16 @@
 
 class AppSidebar extends HTMLElement {
 
+    static get observedAttributes() {
+        return ["user-role"];
+    }
+
+    attributeChangedCallback(name) {
+        if (name === "user-role" && this.isConnected) {
+            this.updateUserManagementLink();
+        }
+    }
+
     connectedCallback() {
 
         this.innerHTML = `
@@ -46,6 +56,8 @@ class AppSidebar extends HTMLElement {
 
         `;
 
+        this.updateUserManagementLink();
+
         // Detectar el botón de cerrar sesión
         const logoutButton = this.querySelector("#logout-button");
 
@@ -59,6 +71,40 @@ class AppSidebar extends HTMLElement {
             );
 
         });
+
+    }
+
+    updateUserManagementLink() {
+
+        const navigation = this.querySelector(".sidebar-nav");
+
+        if (!navigation) {
+            return;
+        }
+
+        const existingLink = navigation.querySelector('a[href="users.html"]');
+
+        if (this.getAttribute("user-role") !== "Administrativo") {
+            existingLink?.remove();
+            return;
+        }
+
+        if (existingLink) {
+            return;
+        }
+
+        const link = document.createElement("a");
+        link.href = "users.html";
+        link.className = "nav-item";
+
+        const icon = document.createElement("span");
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = "♙";
+
+        link.append(icon, document.createTextNode(" Gestión de usuarios"));
+
+        const examsLink = navigation.querySelector('a[href="exams.html"]');
+        navigation.insertBefore(link, examsLink);
 
     }
 

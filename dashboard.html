@@ -53,43 +53,31 @@
 
                 <div class="stats-grid">
 
-                    <article class="stat-card">
+                    <acme-stat-card
+                        id="users-count"
+                        label="Usuarios registrados"
+                        value="0"
+                        icon="♙"
+                        tone="users"
+                    ></acme-stat-card>
 
-                        <div class="stat-icon users-icon">♙</div>
+                    <acme-stat-card
+                        id="exams-count"
+                        label="Exámenes creados"
+                        value="0"
+                        icon="▤"
+                        tone="exams"
+                    ></acme-stat-card>
 
-                        <div>
-                            <span>Usuarios registrados</span>
-                            <strong id="users-count">0</strong>
-                        </div>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <div class="stat-icon exams-icon">▤</div>
-
-                        <div>
-                            <span>Exámenes creados</span>
-                            <strong id="exams-count">0</strong>
-                        </div>
-
-                    </article>
-
-
-                    <article class="stat-card">
-
-                        <div class="stat-icon results-icon">✓</div>
-
-                        <div>
-                            <span>Evaluaciones realizadas</span>
-                            <strong id="results-count">0</strong>
-                        </div>
-
-                    </article>
+                    <acme-stat-card
+                        id="results-count"
+                        label="Evaluaciones realizadas"
+                        value="0"
+                        icon="✓"
+                        tone="results"
+                    ></acme-stat-card>
 
                 </div>
-
             </section>
 
 
